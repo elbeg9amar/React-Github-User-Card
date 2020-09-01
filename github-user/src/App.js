@@ -16,19 +16,23 @@ class App extends React.Component {
     axios.get('https://api.github.com/users/elbeg9amar')
       .then(res => {
         this.setState({gitData: res.data})
+        console.log(res.data)
       })
       .catch(err =>{
         console.log(err)
       })
   }
 
-  componentDidMount() {
+  componentDidUpdate() {
     
   }
+
+  
 
   render(){
     return (
       <div>
+        <haeder><h1>Github User Card</h1></haeder>
         <Users user={this.state.gitData}/>
       </div>
     )
